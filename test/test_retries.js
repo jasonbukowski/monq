@@ -9,7 +9,7 @@ describe('Retries', function () {
     var queue, handler, worker, failed;
 
     beforeEach(function () {
-        queue = new Queue({ db: helpers.db });
+        queue = new Queue({ db: helpers.db }, null, null, 'testcollection');
 
         handler = sinon.spy(function (params, callback) {
             return callback(new Error());
