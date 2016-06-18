@@ -16,6 +16,13 @@ var monq = require('monq');
 var client = monq('mongodb://localhost:27017/monq_example');
 ```
 
+You may also specify the collection name to be used for the jobs with the following option:
+
+```javascript
+var monq = require('monq');
+var client = monq('mongodb://localhost:27017/monq_example', [], { name: 'yourpreferredcollectionname' });
+```
+
 Enqueue jobs by supplying a job name and a set of parameters.  Below, the job `reverse` is being placed into the `example` queue:
 
 ```javascript
